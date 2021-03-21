@@ -75,10 +75,21 @@ unsigned int get_random_int(void);
 unsigned long get_random_long(void);
 unsigned long randomize_range(unsigned long start, unsigned long end, unsigned long len);
 
+u32 prandom_u32(void);
+void prandom_seed(u32 seed);
+
 u32 random32(void);
 void srandom32(u32 seed);
 
 u32 prandom32(struct rnd_state *);
+void prandom_reseed_late(void);
+
+/*
+ * These macros are preserved for backward compatibility and should be
+ * removed as soon as a transition is finished.
+ */
+#define random32() prandom_u32()
+#define srandom32(seed) prandom_seed(seed)
 
 /*
  * Handle minimum values for seeds
