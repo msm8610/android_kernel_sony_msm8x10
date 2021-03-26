@@ -61,7 +61,7 @@
  * Miscellaneous stuff.
  */
 #define CRYPTO_UNSPEC			0
-#define CRYPTO_MAX_ALG_NAME		64
+#define CRYPTO_MAX_ALG_NAME		128
 
 struct scatterlist;
 
